@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Core workflow bootstrapped",
+      "description": "Create the first working user path and keep the repo restartable.",
+      "dependencies": [],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-002",
+      "name": "Verification path stabilized",
+      "description": "Define and validate the checks required before claiming work is done.",
+      "dependencies": ["feat-001"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-003",
+      "name": "Session continuity added",
+      "description": "Record enough state for the next session to resume safely.",
+      "dependencies": ["feat-001"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}

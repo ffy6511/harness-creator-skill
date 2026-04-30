@@ -1,0 +1,128 @@
+{
+  "skill_name": "harness-creator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Existing repo spec-driven preservation",
+      "prompt": "This repo already uses specs/AGENTS.md, specs/active/, and docs/decisions/ records. Improve the harness without replacing the current workflow.",
+      "expected_output": "Assessment of the existing harness, recommendation to keep the active spec as the main state source, and a targeted improvement plan",
+      "files": [
+        "specs/AGENTS.md",
+        "specs/active/01-sample-plan.md"
+      ],
+      "expectations": [
+        "Recognizes the repo as spec-driven",
+        "Does not force feature_list.json as a new default source of truth",
+        "Treats active spec documents as valid state and handoff carriers",
+        "Proposes improvements by subsystem rather than replacing the whole harness"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Greenfield repo requires clarification first",
+      "prompt": "I have a new repository with almost no files. Help me create a harness.",
+      "expected_output": "Clarifying questions about architecture, workflow style, readiness path, and desired evolution before generating files",
+      "files": [],
+      "expectations": [
+        "Asks for missing context before scaffolding",
+        "Distinguishes between short-task and spec-driven work models",
+        "Does not immediately emit init.sh plus feature_list.json as the only answer",
+        "Frames the decision in terms of the user's intended evolution path"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Scaffold docs default to English",
+      "prompt": "Create a greenfield harness for my new repo. I did not specify a language.",
+      "expected_output": "Harness docs scaffolded in English by default",
+      "files": [],
+      "expectations": [
+        "States or implies that generated harness docs default to English",
+        "Does not silently switch to another language unless asked",
+        "Keeps templates and headings in English by default"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Feature list is optional control plane",
+      "prompt": "Why do I need feature_list.json if Codex already has tool calls?",
+      "expected_output": "Explanation that tool calls define capability while feature lists define scope/state, plus guidance on when not to use feature_list.json",
+      "files": [],
+      "expectations": [
+        "Separates capability from control plane",
+        "Explains that feature_list.json is optional",
+        "Mentions spec-driven repos as a valid alternative truth source",
+        "Warns against duplicate state sources"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Readiness gate instead of mandatory init script",
+      "prompt": "My repo uses TDD and already has clear test entrypoints. Do I still need init.sh?",
+      "expected_output": "Context-aware guidance about readiness gates and a lighter startup contract when appropriate",
+      "files": [],
+      "expectations": [
+        "Does not insist on init.sh in every repo",
+        "Explains readiness gates as the underlying requirement",
+        "Accepts lightweight startup checks for mature repos",
+        "Preserves stronger bootstrap flows for fragile or unfamiliar repos"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Governance remains separate from planning",
+      "prompt": "We already track all phases inside active specs. What harness parts do we still need beyond that?",
+      "expected_output": "Explanation that spec-driven planning can replace some progress files but not governance, verification, or clean-state discipline",
+      "files": [],
+      "expectations": [
+        "States that active specs can replace some progress or handoff artifacts",
+        "States that planning does not replace governance",
+        "Calls out clean-state and verification discipline explicitly",
+        "Keeps the five-subsystem framing intact"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Specs and docs are complementary",
+      "prompt": "Set up a strong spec-driven harness for my repo. I want planning docs and durable knowledge docs to reinforce each other.",
+      "expected_output": "A spec-driven harness with both specs and docs structures, plus guidance on using docs for lessons, features, and durable decisions",
+      "files": [],
+      "expectations": [
+        "Creates or recommends specs/AGENTS.md",
+        "Creates or recommends docs/AGENTS.md",
+        "Uses NN-prefixed numbering for both specs and docs files",
+        "Places durable decisions in docs/decisions rather than requiring a specs constitution folder",
+        "Explains that specs advance implementation while docs capture reusable knowledge"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Specs AGENTS must be detailed, not minimal",
+      "prompt": "Generate specs/AGENTS.md for a spec-driven repository.",
+      "expected_output": "A detailed specs/AGENTS.md with directory roles, naming rules, plan template, lifecycle rules, and writing guidance",
+      "files": [],
+      "expectations": [
+        "Includes a specs directory structure section",
+        "Includes plan naming rules with NN-topic-plan.md",
+        "Includes a concrete required plan template",
+        "Includes lifecycle or status transition guidance",
+        "Includes writing guidance for phases, tasks, or background sections",
+        "Does not collapse into a short directory summary"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Docs AGENTS must cover lessons, features, and decisions",
+      "prompt": "Generate docs/AGENTS.md for a repository that wants durable knowledge capture.",
+      "expected_output": "A detailed docs/AGENTS.md with shared writing rules and clear sections for lessons, features, and decisions",
+      "files": [],
+      "expectations": [
+        "Includes docs/lessons, docs/features, and docs/decisions",
+        "Includes NN-topic.md numbering rules",
+        "Includes frontmatter requirements",
+        "Includes distinct responsibilities for lessons, features, and decisions",
+        "Explains the relationship between docs and specs"
+      ]
+    }
+  ]
+}
