@@ -18,6 +18,7 @@ copy_template() {
 }
 
 copy_template "agents.md" "AGENTS.md"
+copy_template "architecture.md" "ARCHITECTURE.md"
 ln -sfn "AGENTS.md" "$TARGET_DIR/CLAUDE.md"
 copy_template "readiness-check.md" "readiness-check.md"
 mkdir -p "$TARGET_DIR/docs/lessons" "$TARGET_DIR/docs/features" "$TARGET_DIR/docs/decisions"

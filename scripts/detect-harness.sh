@@ -13,6 +13,7 @@ echo
 echo "Signals:"
 for path in \
   "AGENTS.md" \
+  "ARCHITECTURE.md" \
   "CLAUDE.md" \
   "specs/AGENTS.md" \
   "specs/active" \
@@ -41,7 +42,7 @@ if has "specs/AGENTS.md" || has "specs/active" || has "docs/decisions"; then
 elif has "feature_list.json" || has "progress.md"; then
   echo "Detected mode: feature-list-driven"
   echo "Recommendation: preserve the existing feature/progress control plane."
-elif has "AGENTS.md" || has "CLAUDE.md" || has "init.sh" || has "readiness-check.md"; then
+elif has "AGENTS.md" || has "ARCHITECTURE.md" || has "CLAUDE.md" || has "init.sh" || has "readiness-check.md"; then
   echo "Detected mode: minimal harness"
   echo "Recommendation: add only the weakest missing subsystem."
 else

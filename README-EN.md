@@ -35,12 +35,13 @@ This version treats those as **options**, not universal answers.
 
 All scaffolded harness documents are written in English by default unless the user explicitly requests another language.
 The greenfield scaffold also creates `CLAUDE.md` as a symlink to `AGENTS.md`.
-The root `AGENTS.md` template also includes a repository structure section and a set of professional conventions so the scaffold starts with enforceable development norms instead of only startup instructions.
+The root `AGENTS.md` template keeps a concise repository overview and a set of professional conventions, while the detailed structure lives in a root `ARCHITECTURE.md`.
 
 ## High-fidelity templates
 
 The skill should treat these bundled templates as the strongest scaffold sources:
 
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 
@@ -225,6 +226,7 @@ The course five-subsystem model still applies, but the implementation should ada
 Use templates selectively:
 
 - `templates/agents.md`
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 - `templates/init.sh`

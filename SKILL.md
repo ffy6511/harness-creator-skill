@@ -28,11 +28,13 @@ Do not use this skill for prompt engineering, model choice, or generic software 
 
 Treat these bundled templates as the highest-fidelity scaffold sources:
 
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 
 Use them when generating:
 
+- `ARCHITECTURE.md`
 - `specs/AGENTS.md`
 - `docs/AGENTS.md`
 
@@ -158,6 +160,7 @@ Use [Gotchas](references/gotchas.md) before finalizing a design.
 Use these bundled assets selectively:
 
 - `templates/agents.md`
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 - `templates/feature-list.json`

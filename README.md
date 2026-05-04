@@ -37,13 +37,14 @@ npx skills add github:ffy6511/harness-creator-skill
 
 - 生成的 harness 文档默认使用英文，除非用户明确要求其他语言
 - greenfield 脚手架会创建 `CLAUDE.md -> AGENTS.md` 软链接
-- 根 `AGENTS.md` 模板包含仓库结构说明和专业开发约束，不再只是启动说明
+- 根 `AGENTS.md` 模板保留精简的仓库概览和专业开发约束，并把详细结构拆到根 `ARCHITECTURE.md`
 - `specs/AGENTS.md` 与 `docs/AGENTS.md` 使用更强的详细模板，而不是极简目录摘要
 
 ## 高保真模板
 
 这个 skill 将以下模板视为高保真 scaffold 来源：
 
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 
@@ -190,6 +191,7 @@ npx skills add github:ffy6511/harness-creator-skill
 按需使用以下模板：
 
 - `templates/agents.md`
+- `templates/architecture.md`
 - `templates/specs-agents.md`
 - `templates/docs-agents.md`
 - `templates/init.sh`

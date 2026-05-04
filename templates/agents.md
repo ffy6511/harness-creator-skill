@@ -2,18 +2,21 @@
 
 [One-sentence project purpose]
 
-## Repository structure
+## Repository overview
 
 ```text
 .
-├── docs/        # Durable knowledge: lessons, features, and long-lived decisions
-├── specs/       # Active planning and execution context
-└── [other dirs] # Add project-specific domains, apps, packages, or services here
+├── docs/                 # Durable knowledge: lessons, features, and long-lived decisions
+├── specs/                # Active planning and execution context
+├── ARCHITECTURE.md       # Detailed structure, module boundaries, and dependency flow
+└── [other dirs]          # Add project-specific domains, apps, packages, or services here
 ```
 
-Describe the repository structure using directory trees plus short inline comments after each directory entry. Go as deep as needed to explain the architecture clearly, but do not document the purpose of individual files here unless a file acts as a directory-level control point such as `AGENTS.md`.
+Keep this section short. Summarize only the top-level directories and the most important control-point files so a new session can orient quickly.
 
-If the repository structure changes, update this section in the same change. That includes creating, renaming, moving, or deleting directories so the documented structure stays accurate.
+Put the full directory tree, module responsibilities, and dependency flow in `ARCHITECTURE.md`.
+
+If the repository structure changes, update both this summary and `ARCHITECTURE.md` in the same change.
 
 ## Startup workflow
 
@@ -21,16 +24,17 @@ Before writing code:
 
 1. Confirm the working directory with `pwd`.
 2. Read this file fully.
-3. Read the repo's current truth sources:
+3. Read `ARCHITECTURE.md` if it exists.
+4. Read the repo's current truth sources:
    - `specs/AGENTS.md` and active specs, if this repo is spec-driven.
    - `docs/AGENTS.md` and numbered docs, if this repo separates durable knowledge from active plans.
    - `feature_list.json` and `progress.md`, if this repo is feature-list-driven.
    - other repo-specific docs named here.
-4. Run the standard readiness path:
+5. Run the standard readiness path:
    - `./init.sh`, or
    - the commands listed in `readiness-check.md`, or
    - the phase-0 checks in the active spec.
-5. Review recent commits with `git log --oneline -5`.
+6. Review recent commits with `git log --oneline -5`.
 
 If the readiness path is failing, repair that first before adding new scope.
 
@@ -41,7 +45,7 @@ If the readiness path is failing, repair that first before adding new scope.
 - Do not claim done without running the required verification.
 - Update the repo's current state source before ending the session.
 - Leave a clean restart path for the next session.
-- When directory structure changes, update the repository structure section in this file before closing the work.
+- When directory structure changes, update the summary in this file and the detailed structure in `ARCHITECTURE.md` before closing the work.
 
 ## Professional conventions
 
@@ -77,7 +81,7 @@ The point of this split is that active work changes quickly, but durable knowled
 
 ### Record durable decisions explicitly
 
-If a decision will shape multiple future features, specs, or refactors, write it down as a durable decision document instead of leaving it scattered across chats, commits, or one plan file. Record both the chosen direction and the important alternatives that were rejected.
+If a decision will shape multiple future features, specs, or refactors, write it down as a durable decision document instead of leaving it scattered across chats, commits, one plan file, or only inside `ARCHITECTURE.md`. Record both the chosen direction and the important alternatives that were rejected.
 
 Future sessions should not have to rediscover the same architectural decision from scratch.
 
@@ -116,6 +120,6 @@ Before ending a session:
 
 If you encounter:
 
-- Architecture uncertainty: read the architecture or spec docs, then ask the user if needed.
+- Architecture uncertainty: read `ARCHITECTURE.md` or the spec docs, then ask the user if needed.
 - Scope ambiguity: re-read the current state source before expanding work.
 - Repeated verification failure: record the blocker and stop stacking more changes.
