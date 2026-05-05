@@ -2,6 +2,8 @@
 
 # harness-creator Skill
 
+![cover-en](https://typst-notes-1358266118.cos.ap-guangzhou.myqcloud.com/cover-en.png)
+
 > Original skill and course context: [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering)
 >
 > This is not just a template swap. It changes a few important defaults: it separates `specs/` from `docs/`, supports spec-driven work, moves durable design choices into `docs/decisions/`, strengthens the `AGENTS.md` scaffold, and generates English harness docs by default.

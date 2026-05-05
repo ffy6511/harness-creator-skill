@@ -2,6 +2,8 @@
 
 # harness-creator Skill
 
+![cover-zh](https://typst-notes-1358266118.cos.ap-guangzhou.myqcloud.com/cover-zh.png)
+
 > 原始 skill 与课程来源：[walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering)
 >
 > 这个版本不是简单换了一套模板。它主要补了几件事：把 `specs/` 和 `docs/` 分开、支持 spec-driven 开发、把长期设计决策收进 `docs/decisions/`，同时把 `AGENTS.md` 脚手架补完整，默认生成英文版 harness 文档。
